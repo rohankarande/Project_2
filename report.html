@@ -1724,12 +1724,14 @@ Analysis for Max_depth=3:</p>
 Machine learning algorthim's score increases with amount of data. However if more amount of data is added to training dataset, as in case of max_depth=6 and max_depth=7, we see althought the learning curve score for training data is higher than .8/closer to 1 and also is sharper compared to max_depth=3. The fit obtained from their corresponding testing data sets suffer due to less data and thus result in a learning curve which is more uncertain and had a lower scores. For max_depth=6 and max_depth=7(as training data increases) the alogrithm is unable to generalize well and suffer from higher variance.</p>
 <p>Thus it can be seen, there is a tradeoff between training dataset &amp; testing dataset for the amount of data.
 Best solution is to split the data such that both training and testing learning curves converge at a score as close to 1 as possible.</p>
-<p>Would having more training points benefit the model?
+<p>Would having more training points benefit the model? Ans= No
 Adding more training points to the training set will give a higher training score, however since that additional data will be taken out of testing data set,the testing score will tend to be lower. How much lower, that depends on how much total data is avaliable in first place. What was the ratio in which data was split. Complexity of the ML algorithm.
 There is not fixed ratio in which training and testing data is split. As mentioned above it depends on above factors.</p>
 <p>In above example, changing training-testing data split from 80-20 to 90-10% as shown
 (X_train, X_test, y_train, y_test = train_test_split(features, prices, test_size = 0.10, random_state=20))
 does not yeild any notable difference in the training-testing learning curves.</p>
+<p>From the learning curve for max depth=3, we see the training curve has already become stable from 300 datapoints onwards. Also the training testing curve has converged at about 300 data points.
+So adding more data points to training set will not significantally improve the model performance in this case.</p>
 
 </div>
 </div>
